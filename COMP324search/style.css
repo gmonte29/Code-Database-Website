@@ -1,0 +1,19 @@
+#algorithm-types {
+  background-color: white;
+}
+
+#algorithm-container {
+  text-align: center;
+}
+
+.center-text {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 600px; /* Adjust the width as needed */
+}
+
+#algorithm-description {
+  text-align: center; /* Center the text within the description */
+  margin: 0 auto;
+  max-width: 600px; /* Adjust the width as needed */
+}
