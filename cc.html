@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Coder</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            transition: background-color 0.5s;
+        }
+
+ 
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+ 
+
+        h1 {
+            font-size: 36px;
+        }
+
+ 
+
+        #search-icon {
+            float: right;
+            font-size: 24px;
+            margin-top: 4px;
+            margin-right: 20px;
+        }
+
+ 
+
+        #container {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px;
+        }
+
+ 
+
+        .box {
+            width: 30%;
+            background-color: #fff;
+            padding: 20px;
+            margin: 10px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+ 
+
+        .box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+ 
+
+        .question-box {
+            display: none;
+            background-color: #fff;
+            padding: 20px;
+            margin: 10px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+ 
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+ 
+
+        li {
+            font-size: 18px;
+            margin: 10px;
+        }
+</style>
+</head>
+<body>
+<header>
+<h1>Coder</h1>
+<i id="search-icon" class="fas fa-search"></i>
+</header>
+<div id="container">
+<div class="box" id="java-box">
+<h2>Java</h2>
+</div>
+<div class="box" id="python-box">
+<h2>Python</h2>
+</div>
+<div class="box" id="css-box">
+<h2>CSS</h2>
+</div>
+</div>
+
+ 
+
+    <div class="question-box" id="java-questions">
+<h2>Java Questions</h2>
+<ul>
+<li>Java Question 1</li>
+<li>Java Question 2</li>
+<li>Java Question 3</li>
+</ul>
+</div>
+
+ 
+
+    <div class="question-box" id="python-questions">
+<h2>Python Questions</h2>
+<ul>
+<li>Python Question 1</li>
+<li>Python Question 2</li>
+<li>Python Question 3</li>
+</ul>
+</div>
+
+ 
+
+    <div class="question-box" id="css-questions">
+<h2>CSS Questions</h2>
+<ul>
+<li>CSS Question 1</li>
+<li>CSS Question 2</li>
+<li>CSS Question 3</li>
+</ul>
+</div>
+
+ 
+
+    <script>
+        const boxes = document.querySelectorAll('.box');
+        const questionBoxes = document.querySelectorAll('.question-box');
+
+ 
+
+        boxes.forEach((box, index) => {
+            box.addEventListener('click', () => {
+                if (questionBoxes[index].style.display === 'block') {
+                    questionBoxes[index].style.display = 'none';
+                } else {
+                    questionBoxes.forEach((qBox, qIndex) => {
+                        qBox.style.display = index === qIndex ? 'block' : 'none';
+                    });
+                }
+
+ 
+
+                document.body.style.backgroundColor = '#f0f0f0';
+            });
+        });
+</script>
+</body>
+</html>
