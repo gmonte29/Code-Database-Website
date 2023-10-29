@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         /* {
                 name: "Documents",
                 type: "folder",
-                children: [
+                children: 
                     { name: "document1.txt", type: "file" },
                     { name: "document2.txt", type: "file" },
                 ],
