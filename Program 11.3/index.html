@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Programs List</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <h1>Programs List</h1>
+
+    <!-- Filter input elements -->
+    <label for="programTypeFilter">Program Type:</label>
+    <select id="programTypeFilter">
+        <option value="All">All</option>
+        <option value="Desktop">Desktop</option>
+        <option value="Web">Web</option>
+        <!-- Add more program types here -->
+    </select>
+
+    <label for="languageFilter">Programming Language:</label>
+    <select id="languageFilter">
+        <option value="All">All</option>
+        <option value="Java">Java</option>
+        <option value="Python">Python</option>
+        <!-- Add more programming languages here -->
+    </select>
+    <label for="programFile">Upload Program:</label>
+    <input type="file" id="programFile">
+    <button id="uploadButton">Upload</button>
+
+    <table border="1" id="programTable">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Programming Language</th>
+                <th>Program Type</th>
+                <th>Program Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Program 1</td>
+                <td>Java</td>
+                <td>Desktop</td>
+                <td><a href="program1.html">View Program</a></td>
+            </tr>
+            <tr>
+                <td>Program 2</td>
+                <td>Python</td>
+                <td>Web</td>
+                <td><a href="program2.html">View Program</a></td>
+            </tr>
+            <!-- Add more program entries here -->
+        </tbody>
+    </table>
+
+    <!-- JavaScript code for filtering -->
+    <script src="index.js"></script>
+</body>
+</html>

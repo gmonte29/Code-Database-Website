@@ -1,6 +1,6 @@
 /* below relates to <body> elements in html documents */
 body {
-    width: 850px; /*sets width*/
+    /*width: 850px; /*sets width*/
     background: #fff; /*sets background color*/
     font-size: 18px;/*default font size*/
     font-family: Helvetica, Arial, sans-serif; /* preferred font, listed by preference*/
