@@ -58,9 +58,17 @@ function uploadFile() {
     const fileInput = document.getElementById('programFile');
     const file = fileInput.files[0];
 
+    if (!file) {
+        console.error('No file selected for upload');
+        return;
+    }
+
+    // Extract file extension
+    const fileExtension = file.name.split('.').pop().toLowerCase();
+
     const formData = new FormData();
     formData.append('programTitle', document.getElementById('programTitle').value);
-    formData.append('programLanguage', document.getElementById('programLanguage').value);
+    formData.append('programLanguage', detectLanguage(fileExtension));
     formData.append('programFile', file);
 
     fetch('http://localhost:3000/upload', {
@@ -78,4 +86,40 @@ function uploadFile() {
         addProgramRow(data.title, data.language, data.programType, data.programLink);
     })
     .catch(error => console.error('Error:', error));
+}
+
+// Function to detect language based on file extension
+function detectLanguage(extension) {
+    switch (extension) {
+        case 'js':
+            return 'JavaScript';
+        case 'py':
+            return 'Python';
+        case 'java':
+            return 'Java';
+        // Add more cases for other file types as needed
+        default:
+            return 'Unknown';
+    }
+}
+
+// Fetch and display the program data when the page loads
+window.addEventListener('load', () => {
+    fetchPrograms();
+});
+
+function fetchPrograms() {
+    fetch('http://localhost:3000/programs')
+        .then(response => response.json())
+        .then(programs => {
+            // Clear existing rows in the table
+            const table = document.getElementById("programTable").getElementsByTagName('tbody')[0];
+            table.innerHTML = '';
+
+            // Add rows for each program in the fetched data
+            programs.forEach(program => {
+                addProgramRow(program.title, program.language, program.programType, program.programLink);
+            });
+        })
+        .catch(error => console.error('Error fetching programs:', error));
 }

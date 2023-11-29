@@ -1,11 +1,17 @@
 const express = require('express');
 const cors = require('cors');
 const multer = require('multer');
+const path = require('path');  // Import the 'path' module
 
 const app = express();
 const port = 3000;
 
 app.use(cors());
+app.use(express.json()); // Add this line to parse JSON bodies
+
+
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
 
 const storage = multer.diskStorage({
     destination: function (_req, _file, cb) {
@@ -19,26 +25,29 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
+// In-memory storage for uploaded program data
+const uploadedPrograms = [];
+
 app.post('/upload', upload.single('programFile'), (req, res) => {
     const programData = {
-        title: req.file.originalname,
-        language: 'Unknown', // You might want to implement language detection
-        programType: 'Unknown', // You might want to implement type detection
+        title: req.body.programTitle,
+        language: req.body.programLanguage,
+        programType: req.body.programType,
         programLink: '/uploads/' + req.file.filename
     };
+
+    // Add the uploaded program data to the in-memory array
+    uploadedPrograms.push(programData);
 
     res.json(programData);
 });
 
-app.get('/program', (_req, res) => {
-
-    // Logic to retrieve program code based on programTitle
-    // ...
-
-    // Send the program code as the response
-    res.send(programCode);
+app.get('/programs', (_req, res) => {
+    // Send the array of uploaded program data as the response
+    res.json(uploadedPrograms);
 });
 
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
 });
+
