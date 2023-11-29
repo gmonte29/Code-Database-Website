@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const multer = require('multer');
 const path = require('path');  // Import the 'path' module
+const fs = require('fs');
 
 const app = express();
 const port = 3000;
@@ -41,6 +42,20 @@ app.post('/upload', upload.single('programFile'), (req, res) => {
 
     res.json(programData);
 });
+
+app.get('/program', (req, res) => {
+    const programTitle = req.query.title;
+    const program = uploadedPrograms.find(item => item.title === programTitle);
+
+    if (program) {
+        const filePath = path.join(__dirname, program.programLink);
+        const fileContents = fs.readFileSync(filePath, 'utf-8');
+        res.send(fileContents);
+    } else {
+        res.status(404).send('Program not found');
+    }
+});
+
 
 app.get('/programs', (_req, res) => {
     // Send the array of uploaded program data as the response

@@ -97,6 +97,8 @@ function detectLanguage(extension) {
             return 'Python';
         case 'java':
             return 'Java';
+        case 'cpp':
+            return 'C++';
         // Add more cases for other file types as needed
         default:
             return 'Unknown';

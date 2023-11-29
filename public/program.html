@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" type="text/css" rel="stylesheet">
     <title>Program Viewer</title>
 </head>
 <body>
     <h1>Program Viewer</h1>
-    <div id="programContent"></div>
+    <pre id="programContent"></pre>
 
     <script>
         // Extract the program title from the URL
@@ -20,7 +21,7 @@
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
-                return response.text();
+                return response.text(); // Change to response.text() to get the file contents
             })
             .then(programCode => {
                 // Display the program code
