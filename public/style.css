@@ -95,3 +95,9 @@ font-size: 18px;
     text-decoration: none;
     cursor: pointer;
 }
+
+#searchBar {
+    width: 300px;
+    padding: 8px;
+    margin-bottom: 10px;
+}
