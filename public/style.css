@@ -1,9 +1,8 @@
 /* below relates to <body> elements in html documents */
 body {
-    /*width: 850px; /*sets width*/
-    background: #fff; /*sets background color*/
-    font-size: 18px;/*default font size*/
-    font-family: Helvetica, Arial, sans-serif; /* preferred font, listed by preference*/
+    background: #fff url('grid-pattern.jpg') repeat;
+    font-size: 18px;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 /* targets <h1> elements in html files*/
