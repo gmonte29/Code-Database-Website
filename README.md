@@ -1,6 +1,7 @@
 # Code Database _[COMP 424 001 Project]_
 
-Group Members: Giorgio Montenegro, Michael Collins, Christian Cooke, Emilie Amadi
+Group Members: [Giorgio Montenegro](https://github.com/gmonte29), [Michael Collins](https://github.com/mcollins21), 
+[Christian Cooke](https://github.com/ChristianACooke), Emilie Amadi
 
 ## About
 
