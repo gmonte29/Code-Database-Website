@@ -100,3 +100,30 @@ font-size: 18px;
     padding: 8px;
     margin-bottom: 10px;
 }
+
+/* Style buttons and place them in a horizontal box */
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Style the programs table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
