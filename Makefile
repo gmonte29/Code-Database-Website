@@ -1,5 +1,6 @@
 install:
 	npm install express
+	mkdir -p uploads
 	
 start:
 	node server.js
