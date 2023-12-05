@@ -1,13 +1,13 @@
 /* below relates to <body> elements in html documents */
 body {
-    background: #fff url('grid-pattern.png') repeat;
+    background-color: #fff;
     font-size: 18px;
     font-family: Helvetica, Arial, sans-serif;
 }
 
 /* targets <h1> elements in html files*/
 h1 {
-    color: SeaGreen;
+    color: maroon;
 }
 
 h2 {
@@ -48,6 +48,13 @@ font-size: 18px;
 
 /*sets the listed items on new lines on the webpage*/
 #programFile, #uploadButton, #programTypeFilter, #languageFilter{
+    clear: both;
+    display: block;
+    margin-bottom: 10px; /* Adjust the margin as needed */
+}
+
+#programContent{
+    background-color: #f4f4f4;
     clear: both;
     display: block;
     margin-bottom: 10px; /* Adjust the margin as needed */
@@ -118,6 +125,7 @@ font-size: 18px;
 
 /* Style the programs table */
 table {
+    background-color: #f4f4f4;
     width: 100%;
     border-collapse: collapse;
 }
