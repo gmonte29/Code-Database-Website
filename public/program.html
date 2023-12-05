@@ -8,12 +8,16 @@
 </head>
 <body>
     <h1>Program Viewer</h1>
+    <h2 id="programTitle"></h2>
     <pre id="programContent"></pre>
 
     <script>
         // Extract the program title from the URL
         const urlParams = new URLSearchParams(window.location.search);
         const programTitle = urlParams.get('title');
+
+        // Set the program title
+        document.getElementById('programTitle').innerText = programTitle;
 
         // Fetch the program data from the server
         fetch(`http://localhost:3000/program?title=${encodeURIComponent(programTitle)}`)

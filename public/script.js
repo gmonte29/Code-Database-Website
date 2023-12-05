@@ -62,6 +62,47 @@ function addProgramRow(title, language, programType, _programLink) {
     
     // Create a link to the common program page with the program title as a query parameter
     cell4.innerHTML = `<a href="program.html?title=${encodeURIComponent(title)}" target="_blank">View Program</a>`;
+
+    // Update filter options and trigger filter
+    updateFilterOptions();
+    filterPrograms();
+}
+
+// Function to update filter options
+function updateFilterOptions() {
+    const programTypes = new Set();
+    const languages = new Set();
+
+    programRows.forEach(row => {
+        programTypes.add(row.querySelector("td:nth-child(3)").textContent);
+        languages.add(row.querySelector("td:nth-child(2)").textContent);
+    });
+
+    console.log("Program Types:", programTypes);
+    console.log("Languages:", languages);
+
+    updateFilterDropdown(programTypeFilter, programTypes);
+    updateFilterDropdown(languageFilter, languages);
+}
+
+// Function to update filter dropdown options
+function updateFilterDropdown(filterElement, optionsSet) {
+    // Clear existing options
+    filterElement.innerHTML = '';
+
+    // Add 'All' option
+    const allOption = document.createElement('option');
+    allOption.value = 'All';
+    allOption.text = 'All';
+    filterElement.appendChild(allOption);
+
+    // Add unique options
+    optionsSet.forEach(optionValue => {
+        const option = document.createElement('option');
+        option.value = optionValue;
+        option.text = optionValue;
+        filterElement.appendChild(option);
+    });
 }
 
 document.getElementById('openUploadModal').addEventListener('click', function() {
