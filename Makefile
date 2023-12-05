@@ -3,3 +3,6 @@ install:
 	
 start:
 	node server.js
+
+clean:
+	rm -rf node_modules
