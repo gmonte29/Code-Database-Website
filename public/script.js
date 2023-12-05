@@ -6,6 +6,7 @@ const programRows = document.querySelectorAll("table tbody tr");
 programTypeFilter.addEventListener("change", filterPrograms);
 languageFilter.addEventListener("change", filterPrograms);
 
+// Program Filtering
 function filterPrograms() {
     const selectedProgramType = programTypeFilter.value;
     const selectedLanguage = languageFilter.value;
@@ -47,6 +48,7 @@ function searchPrograms() {
     }
 }
 
+// Add Row to Table
 function addProgramRow(title, language, programType, _programLink) {
     const table = document.getElementById("programTable").getElementsByTagName('tbody')[0];
     const newRow = table.insertRow(-1);
@@ -76,6 +78,7 @@ document.getElementById('uploadForm').addEventListener('submit', function (e) {
     document.getElementById('uploadModal').style.display = 'none';
 });
 
+// Upload File
 function uploadFile() {
     const fileInput = document.getElementById('programFile');
     const file = fileInput.files[0];
