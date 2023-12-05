@@ -93,6 +93,7 @@ function uploadFile() {
 
     const formData = new FormData();
     formData.append('programTitle', document.getElementById('programTitle').value);
+    formData.append('programType', document.getElementById('programType').value); // New line
     formData.append('programLanguage', detectLanguage(fileExtension));
     formData.append('programFile', file);
 
