@@ -122,8 +122,14 @@ function detectLanguage(extension) {
             return 'Python';
         case 'java':
             return 'Java';
+        case 'c':
+            return 'C';
         case 'cpp':
             return 'C++';
+        case 'kt':
+            return 'Kotlin';
+        case 'swift':
+            return 'Swift';
         // Add more cases for other file types as needed
         default:
             return 'Unknown';
