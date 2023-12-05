@@ -46,11 +46,18 @@ p, li {
 font-size: 18px;
 }
 
-/*sets the listed items on new lines on the webpage*/
+/*
+sets the listed items on new lines on the webpage
 #programFile, #uploadButton, #programTypeFilter, #languageFilter{
     clear: both;
     display: block;
-    margin-bottom: 10px; /* Adjust the margin as needed */
+    margin-bottom: 10px;
+}
+*/
+
+#programTypeFilter, #languageFilter, #searchBar, #uploadButton {
+    display: inline-block;
+    margin-right: 35px; /* Adjust the margin as needed */
 }
 
 #programContent{
