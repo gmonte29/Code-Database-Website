@@ -2,7 +2,7 @@
 body {
     background-color: #fff;
     font-size: 18px;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: sans-serif;
 }
 
 /* targets <h1> elements in html files*/
@@ -10,56 +10,13 @@ h1 {
     color: maroon;
 }
 
-h2 {
-    font-size: 1em;
-}
-
-
-/* targets <h3> elements in html files*/
-h3 {
-    font-size: 1.75em;
-}
-
-/* targets <header> elements*/
-header {
-    border-bottom: 1px solid #dedede;
-}
-
-/*targets <p> elements descended from <header>*/
-header p {
-    font-size: 1.25em;
-    font-style: italic;
-}
-
-/*targets <p> elements descended from <footer>*/
-footer p {
-    font-size: 0.8em;
-}
-
-/*targets anchor (<a>) elements*/
-a {
-    text-decoration: none;
-}
-
-/*targets <p> and list items (<li>)*/
-p, li {
-font-size: 18px;
-}
-
-/*
-sets the listed items on new lines on the webpage
-#programFile, #uploadButton, #programTypeFilter, #languageFilter{
-    clear: both;
-    display: block;
-    margin-bottom: 10px;
-}
-*/
-
+/* adds right margin to filter and search bar*/
 #programTypeFilter, #languageFilter, #searchBar, #uploadButton {
     display: inline-block;
     margin-right: 35px; /* Adjust the margin as needed */
 }
 
+/* adds grey to the code block on program.html*/
 #programContent{
     background-color: #f4f4f4;
     clear: both;
@@ -67,6 +24,7 @@ sets the listed items on new lines on the webpage
     margin-bottom: 10px; /* Adjust the margin as needed */
 }
 
+/* adds margin below upload button*/
 #openUploadModal {
     clear: both;
     display: block;
@@ -74,7 +32,7 @@ sets the listed items on new lines on the webpage
 }
 
 
-/* Modal styles */
+/* Allows for modal to appear after clicking upload program button */
 .modal {
     display: none;
     position: fixed;
@@ -87,6 +45,7 @@ sets the listed items on new lines on the webpage
     background-color: rgba(0,0,0,0.4);
 }
 
+/* Upload modal window design */
 .modal-content {
     background-color: #fefefe;
     margin: 10% auto;
@@ -95,6 +54,7 @@ sets the listed items on new lines on the webpage
     width: 50%;
 }
 
+/* exit button in upload modal window*/
 .close {
     color: #aaa;
     float: right;
@@ -102,6 +62,7 @@ sets the listed items on new lines on the webpage
     font-weight: bold;
 }
 
+/* Adds specific cursor when hovering over exit button in upload modal*/
 .close:hover,
 .close:focus {
     color: black;
@@ -109,25 +70,11 @@ sets the listed items on new lines on the webpage
     cursor: pointer;
 }
 
+/* Styles search bar */
 #searchBar {
     width: 300px;
     padding: 8px;
     margin-bottom: 10px;
-}
-
-/* Style buttons and place them in a horizontal box */
-.buttons-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-
-.button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
 }
 
 /* Style the programs table */
@@ -137,6 +84,7 @@ table {
     border-collapse: collapse;
 }
 
+/* Style cells in programs table */
 th, td {
     padding: 8px;
     text-align: left;

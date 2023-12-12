@@ -15,29 +15,26 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <form enctype="multipart/form-data" id="uploadForm" action="http://localhost:3000/upload" method="post">
+               
                 <label for="programTitle">Program Title:</label>
                 <input type="text" id="programTitle" name="programTitle" required>
                 <br>
                 <br>
-
-                <!-- Add the new lines for Program Type -->
                 <label for="programType">Program Type:</label>
                 <input type="text" id="programType" name="programType" required>
                 <br>
                 <br>
-
                 <label for="programFile">Upload Program:</label>
                 <br>
                 <br>
                 <input type="file" name="programFile" id="programFile" required>
-
                 <input type="submit" value="Upload">
+
             </form>
         </div>
     </div>
 
-
-    <!-- Filter input elements -->
+    <!-- Filter input elements, not functional currently -->
     <label for="programTypeFilter">Program Type:</label>
     <select id="programTypeFilter">
         <option value="All">All</option>
@@ -54,7 +51,7 @@
     <label for="searchBar">Search by Name:</label>
     <input type="text" id="searchBar" oninput="searchPrograms()" placeholder="Search Here">
 
-
+    <!-- programs table -->
     <table border="1" id="programTable">
         <thead>
             <tr>
@@ -69,7 +66,7 @@
         </tbody>
     </table>
 
-    <!-- JavaScript code for filtering and modal -->
+    <!-- JavaScript file utilized -->
     <script src="script.js"></script>
 </body>
 </html>

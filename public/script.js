@@ -6,7 +6,7 @@ const programRows = document.querySelectorAll("table tbody tr");
 programTypeFilter.addEventListener("change", filterPrograms);
 languageFilter.addEventListener("change", filterPrograms);
 
-// Program Filtering
+// Program Filtering, NOT CURRENTLY FUNCTIONAL
 function filterPrograms() {
     const selectedProgramType = programTypeFilter.value;
     const selectedLanguage = languageFilter.value;
@@ -48,7 +48,7 @@ function searchPrograms() {
     }
 }
 
-// Add Row to Table
+// Add Row to table function
 function addProgramRow(title, language, programType, _programLink) {
     const table = document.getElementById("programTable").getElementsByTagName('tbody')[0];
     const newRow = table.insertRow(-1);
@@ -63,12 +63,12 @@ function addProgramRow(title, language, programType, _programLink) {
     // Create a link to the common program page with the program title as a query parameter
     cell4.innerHTML = `<a href="program.html?title=${encodeURIComponent(title)}" target="_blank">View Program</a>`;
 
-    // Update filter options and trigger filter
+    // Update filter options and trigger filter, NOT CURRENTLY FUNCTIONAL
     updateFilterOptions();
     filterPrograms();
 }
 
-// Function to update filter options
+// Function to update filter options, NOT CURRENTLY FUNCTIONAL
 function updateFilterOptions() {
     const programTypes = new Set();
     const languages = new Set();
@@ -85,7 +85,7 @@ function updateFilterOptions() {
     updateFilterDropdown(languageFilter, languages);
 }
 
-// Function to update filter dropdown options
+// Function to update filter dropdown options, NOT CURRENTLY FUNCTIONAL
 function updateFilterDropdown(filterElement, optionsSet) {
     // Clear existing options
     filterElement.innerHTML = '';
@@ -119,7 +119,8 @@ document.getElementById('uploadForm').addEventListener('submit', function (e) {
     document.getElementById('uploadModal').style.display = 'none';
 });
 
-// Upload File
+
+// Upload File function
 function uploadFile() {
     const fileInput = document.getElementById('programFile');
     const file = fileInput.files[0];
@@ -172,7 +173,6 @@ function detectLanguage(extension) {
             return 'Kotlin';
         case 'swift':
             return 'Swift';
-        // Add more cases for other file types as needed
         default:
             return 'Unknown';
     }
@@ -183,6 +183,7 @@ window.addEventListener('load', () => {
     fetchPrograms();
 });
 
+// retrieve saved program function
 function fetchPrograms() {
     fetch('http://localhost:3000/programs')
         .then(response => response.json())
